@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kozomor Krat</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #fff; color: #111;
+  overflow-y: auto; /* Включаем скролл на всю страницу */
+}
+body { display: flex; }
+nav {
+  width: 240px; padding: 1rem 0 0 1.5rem;
+  display: flex; flex-direction: column;
+  position: fixed; height: 100%;
+  background: #fff; box-sizing: border-box;
+  justify-content: flex-start; z-index: 1;
+}
+nav h1 {
+  cursor: pointer; user-select: none;
+  font-size: 2.4rem; margin: 0 0 1rem 0;
+  font-weight: 600; opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  white-space: nowrap;
+}
+nav h1.visible { opacity: 1; transform: translateY(0); }
+nav a {
+  text-decoration: none; color: #111;
+  margin: 0.35rem 0; font-weight: 500;
+  font-size: 1.4rem; cursor: pointer;
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.5s, transform 0.5s, color 0.3s ease;
+}
+nav a.active { color: #666; }
+nav a:hover:not(.active) { color: #444; }
+nav a.visible { opacity: 1; transform: translateY(0); }
+
+main {
+  margin-left: 280px; padding: 2rem;
+  flex-grow: 1; min-height: 100vh;
+  box-sizing: border-box;
+}
+
+section {
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: none; flex-direction: column;
+}
+section.visible {
+  opacity: 1; transform: translateY(0);
+  display: flex;
+}
+
+#projects-submenu {
+  margin-bottom: 1rem; display: flex;
+  gap: 1.2rem; opacity: 0; transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#projects-submenu.visible { opacity: 1; transform: translateY(0); }
+#projects-submenu button {
+  font: 600 1.25rem 'Inter', sans-serif;
+  background: none; border: none; cursor: pointer;
+  color: #111; padding: 0.2rem 0.6rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s, border-color 0.25s;
+}
+#projects-submenu button.active {
+  color: #666; border-color: #666;
+}
+#projects-submenu button:hover:not(.active) { color: #444; }
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+}
+#gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0;
+  transition: filter 0.3s ease, opacity 0.4s ease;
+}
+#gallery img.visible {
+  opacity: 1;
+}
+#gallery:not(.single-view) img:hover {
+  filter: brightness(60%);
+  cursor: pointer;
+}
+#gallery.single-view {
+  grid-template-columns: 1fr;
+  justify-items: start;
+}
+#gallery.single-view img {
+  cursor: default;
+  filter: none !important;
+  pointer-events: none;
+  width: 135% !important; /* 1.5 times larger */
+  max-width: 600px;
+  margin-left: 1.5rem;
+  overflow: visible;
+}
+
+#project-view {
+  display: none;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s, transform 0.5s;
+  max-width: 100%;
+  margin-left: 1.5rem;
+  margin-top: 0; /* Убираем верхний отступ */
+}
+#project-view.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Структура описания как в about */
+#project-description {
+  max-width: 50%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+#project-description p {
+  margin-bottom: 1rem;
+}
+
+#contact-section { padding-top: 6rem; }
+#contact-section p {
+  font-size: 1.1rem; line-height: 1.6;
+}
+#contact-section a {
+  color: #111; text-decoration: none;
+}
+
+#about-section {
+  flex-direction: row; gap: 2rem;
+  align-items: flex-start;
+}
+#about-section img {
+  max-width: 45%; height: auto;
+  object-fit: contain; opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+#about-section.visible img {
+  opacity: 1; transform: translateY(0);
+}
+#about-text {
+  max-width: 50%; font-size: 1.1rem; line-height: 1.5;
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+#about-section.visible #about-text {
+  opacity: 1; transform: translateY(0);
+}
+</style>
+</head>
+<body>
+<nav>
+  <h1 id="nav-title">Kozomor Krat</h1>
+  <a href="#" data-section="projects">Projects</a>
+  <a href="#" data-section="about">About</a>
+  <a href="#" data-section="contact">Contact</a>
+</nav>
+<main id="main-content">
+  <section id="projects-section">
+    <div id="projects-submenu">
+      <button data-category="wooden" class="active">Wooden</button>
+      <button data-category="ceramic">Ceramic</button>
+      <button data-category="drawings">Drawings</button>
+      <button data-category="tattoos">Tattoos</button>
+      <button data-category="photos">Photos</button>
+      <button data-category="ai">AI</button>
+    </div>
+    <div id="gallery"></div>
+    <div id="project-view" style="display:none;">
+      <img id="project-image" src="" alt="Selected project" />
+      <div id="project-description"></div>
+    </div>
+  </section>
+  <section id="about-section" aria-label="About Section">
+    <img src="https://i.postimg.cc/fLpP25gY/photo-1-2025-06-29-14-48-11-topaz-lighting-color-upscale-4x.jpg" alt="About Image" />
+    <div id="about-text">
+      <p>I collect forgotten fragments — driftwood, old fabric, bark, dry herbs, bones — to breathe new life into them, turning them into artifacts of memory. My work exists between forest and home, between myth and reality, carrying the spirit of Slavic folklore, pagan rituals, and ancestral traditions.</p>
+      <p>These are not just objects — they are totems, talismans, protective symbols infused with stories of forgotten grandmothers and grandfathers, whispers of the forest, traces of old rituals. I am inspired by Slavic mythology, tales of witches, wise elders, forest spirits, and ancient sorcery passed down through generations.</p>
+      <p>Every piece I create is a relic — a handmade ritual object, raw and honest, carrying the marks of time and nature. Driftwood becomes faces, fabric transforms into talismans, roots and branches form symbols of lost clans. Through my work, I reconnect with the forgotten past — with the earth, with ancestral spirits, with the wild unknown.</p>
+      <p>This is a space where the forest is alive — dark, mysterious, filled with omens. Where every knot of wood, every rough edge of bark carries myth, fear, and strength. My creations are for those who feel the bloodline calling, who sense the roots beneath their feet, and who long for the ancient world hidden beneath the surface.</p>
+    </div>
+  </section>
+  <section id="contact-section" aria-label="Contact Section">
+    <p style="margin-top: 2rem;">Email: <a href="mailto:shamisakzun@gmail.com">shamisakzun@gmail.com</a><br />
+    Instagram: <a href="https://instagram.com/kozomorkrat" target="_blank">@kozomorkrat</a></p>
+  </section>
+</main>
+<script>
+const navTitle = document.getElementById('nav-title');
+const navLinks = document.querySelectorAll('nav a');
+const sections = {
+  projects: document.getElementById('projects-section'),
+  about: document.getElementById('about-section'),
+  contact: document.getElementById('contact-section')
+};
+const projectsSubmenu = document.getElementById('projects-submenu');
+const submenuButtons = projectsSubmenu.querySelectorAll('button');
+const gallery = document.getElementById('gallery');
+const projectView = document.getElementById('project-view');
+const projectImage = document.getElementById('project-image');
+const projectDescription = document.getElementById('project-description');
+
+const aboutTextHTML = `
+  <p>I collect forgotten fragments — driftwood, old fabric, bark, dry herbs, bones — to breathe new life into them, turning them into artifacts of memory. My work exists between forest and home, between myth and reality, carrying the spirit of Slavic folklore, pagan rituals, and ancestral traditions.</p>
+  <p>These are not just objects — they are totems, talismans, protective symbols infused with stories of forgotten grandmothers and grandfathers, whispers of the forest, traces of old rituals. I am inspired by Slavic mythology, tales of witches, wise elders, forest spirits, and ancient sorcery passed down through generations.</p>
+  <p>Every piece I create is a relic — a handmade ritual object, raw and honest, carrying the marks of time and nature. Driftwood becomes faces, fabric transforms into talismans, roots and branches form symbols of lost clans. Through my work, I reconnect with the forgotten past — with the earth, with ancestral spirits, with the wild unknown.</p>
+  <p>This is a space where the forest is alive — dark, mysterious, filled with omens. Where every knot of wood, every rough edge of bark carries myth, fear, and strength. My creations are for those who feel the bloodline calling, who sense the roots beneath their feet, and who long for the ancient world hidden beneath the surface.</p>
+`;
+
+const projectData = {
+  wooden: [
+    {
+      src:'https://i.postimg.cc/SKQHJnMY/photo-6-2025-06-29-14-48-11.jpg',
+      title: 'Kozomor Mask',
+      desc: `<p>Materials were collected by hand on the mountain Veliki Kozomor during a fierce winter storm and blizzard. Legend says this mask was created by a lone woodsman who vanished into the forest, cursed to wander forever as a spirit of the wild and cold.</p>
+      <p><strong>Materials:</strong> Pine root, spider nests.</p>`
+    },
+    {src:'https://i.postimg.cc/CKvXDwGP/photo-5-2025-06-29-14-48-11.jpg', title: '', desc: ''},
+    {src:'https://i.postimg.cc/3rPMnrPz/3a4bddbd1330f7066904fe703d14a4fe.jpg', title: '', desc: ''},
+    {src:'https://i.postimg.cc/PrZgcsHJ/photo-2-2025-06-29-14-48-11.jpg', title: '', desc: ''},
+    {src:'https://i.postimg.cc/MpSCJPZD/photo-4-2025-06-29-14-48-11.jpg', title: '', desc: ''},
+    {src:'https://i.postimg.cc/yWqT9bpr/6e9ea1b12c6251a240a6b41949373009.jpg', title: '', desc: ''},
+    {src:'https://i.postimg.cc/vZtpYrcd/photo-3-2025-06-29-14-48-11.jpg', title: '', desc: ''},
+    {src:'https://i.postimg.cc/667Jr41d/951e62e3d4aece6a088f96f2a512adf9.jpg', title: '', desc: ''}
+  ]
+};
+
+function clearActive() {
+  navLinks.forEach(link => link.classList.remove('active'));
+  submenuButtons.forEach(btn => btn.classList.remove('active'));
+}
+
+function hideAllSections() {
+  Object.values(sections).forEach(sec => sec.classList.remove('visible'));
+  projectView.style.display = 'none';
+  projectView.classList.remove('visible');
+  projectImage.src = '';
+  projectDescription.innerHTML = '';
+  gallery.innerHTML = '';
+  gallery.classList.remove('single-view');
+  projectsSubmenu.classList.remove('visible');
+}
+
+function showSection(name) {
+  clearActive();
+  hideAllSections();
+  if (name && sections[name]) {
+    sections[name].classList.add('visible');
+    const link = document.querySelector(`nav a[data-section="${name}"]`);
+    if (link) link.classList.add('active');
+    if (name === 'projects') {
+      projectsSubmenu.classList.add('visible');
+      loadGallery('wooden');
+      submenuButtons[0].classList.add('active');
+    }
+  }
+}
+
+function loadGallery(category) {
+  gallery.innerHTML = '';
+  projectView.style.display = 'none';
+  projectView.classList.remove('visible');
+  gallery.classList.remove('single-view');
+  const items = projectData[category] || [];
+  items.forEach((item,i) => {
+    const img = document.createElement('img');
+    img.src = item.src;
+    img.alt = `Project ${category} ${i+1}`;
+    img.dataset.index = i;
+    gallery.appendChild(img);
+    setTimeout(() => img.classList.add('visible'), i * 50);
+  });
+  document.body.style.overflow = 'auto'; // scroll whole page enabled
+}
+
+gallery.addEventListener('click', e => {
+  if(e.target.tagName==='IMG' && !gallery.classList.contains('single-view')){
+    const index = +e.target.dataset.index;
+    const item = projectData.wooden[index];
+    if(!item) return;
+
+    gallery.innerHTML = '';
+    gallery.classList.add('single-view');
+
+    const img = document.createElement('img');
+    img.src = item.src;
+    img.alt = 'Selected project';
+    img.style.cursor = 'default';
+    img.style.filter = 'none';
+    img.style.pointerEvents = 'none';
+    gallery.appendChild(img);
+
+    projectView.style.display = 'flex';
+    projectView.classList.add('visible');
+    projectImage.src = item.src;
+    projectDescription.innerHTML = item.title 
+      ? `<h2>${item.title}</h2>${item.desc || aboutTextHTML}`
+      : aboutTextHTML;
+
+    // Прокрутка к началу проекта (чтобы не было скролла вниз)
+    window.scrollTo({top: 0, behavior: 'smooth'});
+
+    document.body.style.overflow = 'auto';
+  }
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    showSection(link.dataset.section);
+  });
+});
+
+submenuButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    clearActive();
+    btn.classList.add('active');
+    loadGallery(btn.dataset.category);
+  });
+});
+
+navTitle.addEventListener('click', () => {
+  clearActive();
+  hideAllSections();
+  projectsSubmenu.classList.remove('visible');
+  document.body.style.overflow = 'auto';
+});
+
+window.addEventListener('load', () => {
+  navTitle.classList.add('visible');
+  navLinks.forEach(link => link.classList.add('visible'));
+});
+
+hideAllSections();
+</script>
+</body>
+</html>
