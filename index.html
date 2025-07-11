@@ -142,7 +142,8 @@ section.visible {
     grid-template-columns: 1fr 1fr;
   }
 }
-#gallery img {
+#gallery img,
+#gallery video {
   width: 100%;
   aspect-ratio: 4 / 5;
   height: auto;
@@ -151,7 +152,8 @@ section.visible {
   opacity: 0;
   transition: filter 0.3s ease, opacity 0.4s ease;
 }
-#gallery img.visible {
+#gallery img.visible,
+#gallery video.visible {
   opacity: 1;
 }
 #gallery:not(.single-view) img:hover {
@@ -370,14 +372,28 @@ function loadGallery(category) {
   gallery.classList.remove('single-view');
   const items = projectData[category] || [];
   items.forEach((item, i) => {
-    const tagType = category === 'video' ? 'VIDEO' : 'IMG'
-    const elem = document.createElement(tagType);
-    elem.src = item.src;
+    const elem = createContentElement(category, item)
     elem.alt = `Project ${category} ${i+1}`;
     elem.dataset.index = i;
     gallery.appendChild(elem);
     setTimeout(() => elem.classList.add('visible'), i * 50);
   });
+}
+
+function createContentElement(category, item) {
+  let elem
+  if (category === 'video') {
+    elem = document.createElement('VIDEO');
+    elem.setAttribute('autoplay', true)
+    elem.setAttribute('muted', true)
+    elem.setAttribute('playsinline', true)
+    elem.setAttribute('loop', true)
+  } else {
+    elem = document.createElement('IMG');
+  }
+  elem.src = item.src;
+
+  return elem
 }
 
 gallery.addEventListener('click', (e) => {
@@ -391,10 +407,7 @@ gallery.addEventListener('click', (e) => {
     gallery.innerHTML = '';
     gallery.classList.add('single-view');
 
-    const tagType = currentCategory === 'video' ? 'VIDEO' : 'IMG'
-    const elem = document.createElement(tagType)
-
-    elem.src = item.src;
+    const elem = createContentElement(currentCategory, item)
     elem.alt = 'selected project';
     elem.style.cursor = 'default';
     elem.style.filter = 'none';
