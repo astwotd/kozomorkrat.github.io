@@ -86,6 +86,25 @@ section.visible {
   display: flex;
 }
 
+/*** homepage ***/
+#homepage.visible {
+  opacity: 1;
+  display: flex;
+}
+#homepage img {
+  width: auto;
+  max-width: 80vw;
+  max-height: calc(100vh - 34px - 26px);
+  object-fit: contain;
+}
+@media screen and (max-width: 1028px) {
+  #homepage img {
+    width: 100%;
+    max-width: unset;
+    max-height: unset;
+  }
+}
+
 /*** submenu ***/
 #projects-submenu {
   margin-bottom: 1rem;
@@ -284,6 +303,9 @@ section.visible {
   <a href="#" data-section="contact">Contact</a>
 </nav>
 <main id="main-content">
+  <section id="homepage" class="visible">
+    <img src="assets/photo_1_2025-06-29_14-48-11-topaz-lighting-color-upscale-4x.jpg" />
+  </section>
   <section id="projects-section">
     <div id="projects-submenu">
       <button data-category="wooden" class="active">Wooden</button>
@@ -310,14 +332,15 @@ section.visible {
     </div>
   </section>
   <section id="contact-section" aria-label="Contact Section">
-    <p>Email: <a href="mailto:shamisakzun@gmail.com">shamisakzun@gmail.com</a><br />
-    Instagram: <a href="https://instagram.com/kozomorkrat" rel="noopener nofollow" target="_blank">@kozomorkrat</a> <a href="https://instagram.com/astwotd" target="_blank">@astwotd</a></p>
+    <p>Email: <a href="mailto:shamisakzun@gmail.com" rel="noopener nofollow" target="_blank">shamisakzun@gmail.com</a><br />
+    Instagram: <a href="https://instagram.com/kozomorkrat" rel="noopener nofollow" target="_blank">@kozomorkrat</a> <a href="https://instagram.com/astwotd" rel="noopener nofollow" target="_blank">@astwotd</a></p>
   </section>
 </main>
 <script src="data.js"></script>
 <script>
 const navTitle = document.getElementById('nav-title');
 const navLinks = document.querySelectorAll('nav a');
+const homepage = document.getElementById('homepage');
 const sections = {
   projects: document.getElementById('projects-section'),
   about: document.getElementById('about-section'),
@@ -426,6 +449,7 @@ gallery.addEventListener('click', (e) => {
 navLinks.forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
+    homepage.classList.remove('visible')
     showSection(link.dataset.section);
   });
 });
@@ -442,6 +466,7 @@ navTitle.addEventListener('click', () => {
   clearActive();
   hideAllSections();
   projectsSubmenu.classList.remove('visible');
+  homepage.classList.add('visible')
 });
 
 window.addEventListener('load', () => {
