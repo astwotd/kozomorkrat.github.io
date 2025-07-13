@@ -212,8 +212,37 @@ section.visible {
   opacity: 1;
   transform: translateY(0);
 }
+#project-image-wrap {
+  width: 50%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 #project-image {
-  max-width: 50%;
+  width: 100%;
+}
+#project-images-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+}
+#project-images-box img {
+  max-height: 60px;
+  width: auto;
+  user-select: none;
+  cursor: pointer;
+}
+#project-images-box img.active {
+  opacity: 0.4;
+  pointer-events: none;
+}
+#project-images-box img:hover {
+  opacity: 0.4;
+}
+#project-images-box img:active {
+  opacity: 0.2;
 }
 #project-description {
   max-width: 640px;
@@ -227,6 +256,10 @@ section.visible {
 @media screen and (max-width: 840px) {
   #project-view {
     flex-direction: column;
+  }
+  #project-image-wrap {
+    max-width: unset;
+    width: 100%;
   }
   #project-image,
   #project-description {
@@ -318,7 +351,10 @@ section.visible {
     </div>
     <div id="gallery"></div>
     <div id="project-view" style="display:none;">
-      <img id="project-image" src="" alt="Selected project" />
+      <div id="project-image-wrap">
+        <img id="project-image" src="" alt="Selected project" />
+        <div id="project-images-box"></div>
+      </div>
       <div id="project-description"></div>
     </div>
   </section>
@@ -351,6 +387,7 @@ const submenuButtons = projectsSubmenu.querySelectorAll('button');
 const gallery = document.getElementById('gallery');
 const projectView = document.getElementById('project-view');
 const projectImage = document.getElementById('project-image');
+const projectImagesBox = document.getElementById('project-images-box');
 const projectDescription = document.getElementById('project-description');
 
 let currentCategory = ''
@@ -366,6 +403,7 @@ function hideAllSections() {
   projectView.classList.remove('visible');
   projectImage.src = '';
   projectDescription.innerHTML = '';
+  projectImagesBox.innerHTML = '';
   gallery.innerHTML = '';
   gallery.classList.remove('single-view');
   projectsSubmenu.classList.remove('visible');
@@ -387,6 +425,10 @@ function showSection(name) {
   }
 }
 
+function changeProjectImage(src) {
+
+}
+
 function loadGallery(category) {
   currentCategory = category
   gallery.innerHTML = '';
@@ -401,6 +443,7 @@ function loadGallery(category) {
     gallery.appendChild(elem);
     setTimeout(() => elem.classList.add('visible'), i * 50);
   });
+  projectImagesBox.innerHTML = '';
 }
 
 function createContentElement(category, item) {
@@ -436,6 +479,24 @@ gallery.addEventListener('click', (e) => {
     elem.style.filter = 'none';
     elem.style.pointerEvents = 'none';
     gallery.appendChild(elem);
+
+    // create image gallery if more images
+    if (item.images) {
+      const allImages = currentCategory !== 'video' ? [item.src, ...item.images] : item.images
+        allImages.forEach((src, i) => {
+        const elem = document.createElement('IMG');
+        elem.src = src
+        elem.addEventListener('click', () => {
+          projectImage.src = elem.src
+          projectImagesBox.querySelectorAll('img').forEach(im => {
+            im.classList.remove('active')
+          })
+          elem.classList.add('active')
+        })
+         if (i === 0) elem.classList.add('active')
+        projectImagesBox.appendChild(elem)
+      })
+    }
 
     projectView.style.display = 'flex';
     projectView.classList.add('visible');
