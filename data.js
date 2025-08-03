@@ -26,12 +26,7 @@ const projectData = {
         It has none. But it sees you anyway.
       <p>
         <strong>Materials:</strong> Rags, branches, threads, coal, twine.
-      </p>`,
-      images: [
-        'assets/wooden/photo_2025-07-04_18-40-33.jpg',
-        'assets/wooden/photo_2025-07-04_18-40-36.jpg',
-        'assets/wooden/photo_2025-07-04_18-40-38.jpg'
-      ]
+      </p>`
     },
     {
       src:'assets/wooden/3a4bddbd1330f7066904fe703d14a4fe.jpg', 
@@ -44,10 +39,7 @@ const projectData = {
       </p>
       <p>
         <strong>Materials:</strong> Bark, rags, twine.
-      </p>`,
-      images: [
-        'assets/wooden/photo_7_2025-06-29_14-48-11.jpg'
-      ]
+      </p>`
     },
     {
       src:'assets/wooden/photo_2_2025-06-29_14-48-11.jpg', 
@@ -61,10 +53,7 @@ const projectData = {
       </p>
       <p>
         <strong>Materials:</strong> Bark, dried flower, root, threads, burlap, photo.
-      </p>`,
-      images: [
-        'assets/photos/IMG_3128-topaz-face-denoise-sharpen-color-lighting.jpg'
-      ]
+      </p>`
     },
     {
       src:'assets/wooden/photo_4_2025-06-29_14-48-11.jpg', 
@@ -79,12 +68,7 @@ const projectData = {
       </p>
       <p>
         <strong>Materials:</strong> Dried flowers, root, branches, threads, rags, berries.
-      </p>`,
-      images: [
-        'assets/wooden/IMG_2685.jpg',
-        'assets/wooden/IMG_2687.jpg',
-        'assets/wooden/IMG_2686.jpg'
-      ]
+      </p>`
     },
     {
       src:'assets/wooden/6e9ea1b12c6251a240a6b41949373009.jpg', 
@@ -97,10 +81,7 @@ const projectData = {
       </p>
       <p>
         <strong>Materials:</strong> Dried flowers, root, branches, threads, rags, berries.
-      </p>`,
-      images: [
-        'assets/wooden/IMG_2791.jpg'
-      ]
+      </p>`
     },
     {
       src:'assets/wooden/photo_3_2025-06-29_14-48-11.jpg', 
@@ -120,13 +101,7 @@ const projectData = {
       </p>
       <p>
         <strong>Materials:</strong> Bark, branches, threads, burlap, photo.
-      </p>`,
-      images: [
-        'assets/wooden/IMG_3559.jpg',
-        'assets/photos/photo_2023-01-03_18-33-54-topaz-face-upscale-4x.jpg',
-        'assets/photos/photo_2023-09-05_14-54-01-topaz-face-upscale-4x.jpg',
-        'assets/photos/6f647a75-1d2b-41ad-abc3-f56b762d134e-topaz-face-denoise-lighting-focus.jpg',
-      ]
+      </p>`
     },
     {
       src:'assets/wooden/951e62e3d4aece6a088f96f2a512adf9.jpg', 
@@ -149,77 +124,31 @@ const projectData = {
   ceramic: [
     {
       src: 'assets/ceramic/d6ec664974e87d9517da2ae892806974-topaz-denoise-upscale-2x.jpg',
-      title: 'Knot of the Beast’s Memory',
+      title: 'Ancient Vessel',
       desc: `
       <p>
-        <p>
-Back when beasts still remembered the names of their ancestors, and humans had not yet forgotten how to speak with shadows, there lived a creature - not quite a wolf, not quite a bear, not quite a dog from the world of dreams. It did not hunt for flesh, but for scents, tracks, bites, and fear. It knew every trail, every death, and every lie.
-One day, it came to a man who had broken the ancient pact: he killed without gratitude and fed without understanding what he consumed. So the beast tore off its own nose - to smell no more guilt, broke out its fangs - to tear no more flesh, and ripped off its claws - to grasp no longer. It bound them together with twine soaked in the blood of memory. It turned black to vanish from this world.
-This bundle - the Knot of the Beast’s Memory - was later found by shamans. They hung it at a crossroads of branches, so that anyone who passed would remember:
-If you do not honor what you eat, one day you will become the knot.
-They say if you touch the knot at full moon, you may see the beast’s final dream. But not everyone wakes up after that.
-</p><p>
-        <strong>Materials:</strong> Ceramics, paint, twine.
-
+        A ceramic vessel inspired by ancient pottery techniques. Handcrafted with natural clay and glazed with mineral pigments to evoke a sense of timelessness.
       </p>`
     },
     {
       src: 'assets/ceramic/photo_2022-12-17_18-05-28.jpg',
-      title: 'Fists of Soot',
-      desc: `
-      <p>
-        They are not made — they appear.
-        Formed from silence and stored heat, these soot-black fists contain eyes like empty coals.
-            Found in forgotten blankets, at the base of old stoves, or under beds where grief once slept.
-         Not spirits, not symbols — but remnants.
-          Of what was hidden too long.
-            Of what still wants to be held, or let go.
-            </p><p>
-        <strong>Materials:</strong> Ceramics, paint, twine.
-      </p>`,
-      images: [
-        'assets/ceramic/photo_2025-07-04_18-32-33-topaz-denoise-lighting-upscale-1x.jpg',
-        'assets/ceramic/photo_2022-12-16_22-09-14-topaz-denoise-lighting-upscale-1x.jpg',
-        'assets/ceramic/photo_2022-12-17_18-05-14.jpg',
-        'assets/ceramic/IMG_9019.jpg',
-        'assets/ceramic/IMG_1051.jpg',
-        'assets/ceramic/D61F5366-EB01-455B-9284-E3C3DFC107A6.jpg',
-        'assets/ceramic/FB292CA3-F8C5-4B01-8CDB-745F2F19AFBD.jpg'
-      ]
+      title: '',
+      desc: ''
     },
     {
       src: 'assets/ceramic/photo_2025-07-07_16-43-46.jpg',
-      title: 'The Mirror Within',
-      desc: `
-      <p>
-        One day, deep in the forest, a black circle was found, wrapped in swollen wooden flesh, as if the tree itself was trying to hold it back, not let it go.
-        Old witches said it had fallen from the eye socket of a forest spirit who had seen too much in a human soul.
-        It doesn’t reflect your face. It shows a memory of you. Sometimes - your own. More often - someone else's. Some say they see who they could have been, but never became.
-        Others say that if you stare into it too long, it begins to sigh. But it's not the mirror - it's you forgetting how to breathe.
-      </p>`,
-      images: [
-        'assets/ceramic/IMG_9016.jpg',
-      ]
+      title: '',
+      desc: ''
     },
   ],
   drawings: [
     {
       src: 'assets/drawings/IMG_9010.jpg',
-    },
-    {
-      src: 'assets/drawings/IMG_9009.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/drawings/IMG_9013.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/drawings/IMG_9015.jpg',
-      title: '',
-      desc: ''
+      title: 'Ancient Vessel',
+      desc: `
+        <p>
+          A ceramic vessel inspired by ancient pottery techniques. Handcrafted with natural clay and glazed with mineral pigments to evoke a sense of timelessness.
+        </p>`
     },
     {
       src: 'assets/drawings/IMG_9011.jpg',
@@ -235,6 +164,23 @@ They say if you touch the knot at full moon, you may see the beast’s final dre
       src: 'assets/drawings/IMG_9014.jpg',
       title: '',
       desc: ''
+    },
+  ],
+  video: [
+    {
+      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
+      title: 'Example Video',
+      desc: `<p>Описание видео.</p>`
+    },
+    {
+      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
+      title: 'Example Video',
+      desc: `<p>Описание видео.</p>`
+    },
+    {
+      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
+      title: 'Example Video',
+      desc: `<p>Описание видео.</p>`
     },
   ],
   photos: [
@@ -271,5 +217,60 @@ They say if you touch the knot at full moon, you may see the beast’s final dre
       title: '',
       desc: ''
     },
-],                   
+],
+  music: [
+    {
+      src: 'assets/ceramic_1.jpg',
+      title: 'Ancient Vessel',
+      desc: `
+        <p>
+          A ceramic vessel inspired by ancient pottery techniques. Handcrafted with natural clay and glazed with mineral pigments to evoke a sense of timelessness.
+        </p>`
+    },
+    {
+      src: 'assets/ceramic_2.jpg',
+      title: '',
+      desc: ''
+    },
+    {
+      src: 'assets/ceramic_3.jpg',
+      title: '',
+      desc: ''
+    },
+    {
+      src: 'assets/ceramic_4.jpg',
+      title: '',
+      desc: ''
+    },
+    {
+      src: 'assets/ceramic_5.jpg',
+      title: '',
+      desc: ''
+    },
+    {
+      src: 'assets/ceramic_6.jpg',
+      title: '',
+      desc: ''
+    },
+  ],
+  ai: [
+    {
+      src: 'assets/ceramic_1.jpg',
+      title: 'Ancient Vessel',
+      desc: `
+      <p>
+        A ceramic vessel inspired by ancient pottery techniques. Handcrafted with natural clay and glazed with mineral pigments to evoke a sense of timelessness.
+      </p>`
+    },
+    {
+      src: 'assets/ceramic_5.jpg',
+      title: '',
+      desc: ''
+    },
+    {
+      src: 'assets/ceramic_6.jpg',
+      title: '',
+      desc: ''
+    },
+  ]                        
 };
