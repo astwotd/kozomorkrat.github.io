@@ -14,7 +14,7 @@ const projectData = {
       </p>`
     },
     {
-      src:'assets/wooden/photo_5_2025-06-29_14-48-11.jpg', 
+      src:'/assets/Wooden/photo_5_2025-06-29_14-48-11.jpg', 
       title: 'The Watcher of the Ashen Thicket', 
       desc: `
       <p>
@@ -29,7 +29,7 @@ const projectData = {
       </p>`
     },
     {
-      src:'assets/wooden/3a4bddbd1330f7066904fe703d14a4fe.jpg', 
+      src:'/assets/Wooden/3a4bddbd1330f7066904fe703d14a4fe.jpg', 
       title: 'The Guardian', 
       desc: `
       <p>
@@ -42,7 +42,7 @@ const projectData = {
       </p>`
     },
     {
-      src:'assets/wooden/photo_2_2025-06-29_14-48-11.jpg', 
+      src:'/assets/Wooden/photo_2_2025-06-29_14-48-11.jpg', 
       title: 'Alans: Echoes of Time', 
       desc: `
       <p>
@@ -56,7 +56,7 @@ const projectData = {
       </p>`
     },
     {
-      src:'assets/wooden/photo_4_2025-06-29_14-48-11.jpg', 
+      src:'/assets/Wooden/photo_4_2025-06-29_14-48-11.jpg', 
       title: 'The Root That Watches', 
       desc: `
       <p>
@@ -71,7 +71,7 @@ const projectData = {
       </p>`
     },
     {
-      src:'assets/wooden/6e9ea1b12c6251a240a6b41949373009.jpg', 
+      src:'/assets/Wooden/6e9ea1b12c6251a240a6b41949373009.jpg', 
       title: 'The Voiceless Vow', 
       desc: `
       <p>
@@ -84,7 +84,7 @@ const projectData = {
       </p>`
     },
     {
-      src:'assets/wooden/photo_3_2025-06-29_14-48-11.jpg', 
+      src:'/assets/Wooden/photo_3_2025-06-29_14-48-11.jpg', 
       title: 'Ukrainians: Echoes of Time', 
       desc: `
       <p>
@@ -104,7 +104,7 @@ const projectData = {
       </p>`
     },
     {
-      src:'assets/wooden/951e62e3d4aece6a088f96f2a512adf9.jpg', 
+      src:'/assets/Wooden/951e62e3d4aece6a088f96f2a512adf9.jpg', 
       title: 'The Forgotten Chessboard', 
       desc: `
       <p>
@@ -123,7 +123,7 @@ const projectData = {
   ],
   ceramic: [
     {
-      src: 'assets/ceramic/d6ec664974e87d9517da2ae892806974-topaz-denoise-upscale-2x.jpg',
+      src: '/assets/Ceramic/d6ec664974e87d9517da2ae892806974-topaz-denoise-upscale-2x.jpg',
       title: 'Ancient Vessel',
       desc: `
       <p>
@@ -131,19 +131,19 @@ const projectData = {
       </p>`
     },
     {
-      src: 'assets/ceramic/photo_2022-12-17_18-05-28.jpg',
+      src: '/assets/Ceramic/photo_2022-12-17_18-05-28.jpg',
       title: '',
       desc: ''
     },
     {
-      src: 'assets/ceramic/photo_2025-07-07_16-43-46.jpg',
+      src: '/assets/Ceramic/photo_2025-07-07_16-43-46.jpg',
       title: '',
       desc: ''
     },
   ],
   drawings: [
     {
-      src: 'assets/drawings/IMG_9010.jpg',
+      src: '/assets/Drawings/IMG_9010.jpg',
       title: 'Ancient Vessel',
       desc: `
         <p>
@@ -151,17 +151,17 @@ const projectData = {
         </p>`
     },
     {
-      src: 'assets/drawings/IMG_9011.jpg',
+      src: '/assets/Drawings/IMG_9011.jpg',
       title: '',
       desc: ''
     },
     {
-      src: 'assets/drawings/IMG_9012.jpg',
+      src: '/assets/Drawings/IMG_9012.jpg',
       title: '',
       desc: ''
     },
     {
-      src: 'assets/drawings/IMG_9014.jpg',
+      src: '/assets/Drawings/IMG_9014.jpg',
       title: '',
       desc: ''
     },
