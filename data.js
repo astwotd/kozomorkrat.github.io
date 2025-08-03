@@ -1,7 +1,7 @@
 const projectData = {
   wooden: [
     {
-      src:'/assets/wooden/photo_6_2025-06-29_14-48-11.jpg',
+      src:'/assets/Wooden/photo_6_2025-06-29_14-48-11.jpg',
       title: 'Kozomor Mask',
       desc: `
       <p>
