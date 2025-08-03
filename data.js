@@ -237,23 +237,6 @@ They say if you touch the knot at full moon, you may see the beast’s final dre
       desc: ''
     },
   ],
-  video: [
-    {
-      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
-      title: 'Example Video',
-      desc: `<p>Описание видео.</p>`
-    },
-    {
-      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
-      title: 'Example Video',
-      desc: `<p>Описание видео.</p>`
-    },
-    {
-      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
-      title: 'Example Video',
-      desc: `<p>Описание видео.</p>`
-    },
-  ],
   photos: [
     {
       src: 'assets/photos/photo_2025-07-07_19-45-24.jpg',
@@ -288,37 +271,5 @@ They say if you touch the knot at full moon, you may see the beast’s final dre
       title: '',
       desc: ''
     },
-],
-  music: [
-    {
-      src: 'assets/ceramic_1.jpg',
-      title: 'Rhosgobel - The Harvest',
-      desc: `
-        <p>
-          I immersed myself in a fantasy where my grandmother gives me precepts and i go to harvest while experiencing different feelings that overwhelm me today. 
-          While i’m walking, the war begins. Will i have time to return to where i came from? This is a vast battlefield that you have to go through to collect the harvest. 
-          When returning, the way may be mined and become someone else's. The world has long gone crazy and with the help of this music i want to draw attention to a world 
-          in which there is pain from wars that should not begin.
-        </p>`,
-      images: [
-        'assets/IMG_5104.jpg',
-        'assets/IMG_5108.jpg'
-      ]
-    },
-    {
-      src: 'Foggesc - Pneuroxia',
-      title: '<iframe style="border: 0; width: 350px; height: 555px;" src="https://bandcamp.com/EmbeddedPlayer/album=1069344567/size=large/bgcol=333333/linkcol=ffffff/transparent=true/" seamless><a href="https://fgsc.bandcamp.com/album/pneuroxia">Pneuroxia by foggesc</a></iframe>',
-      desc: ''
-    },
-    {
-      src: 'Foggesc - Matburia',
-      title: '<iframe style="border: 0; width: 350px; height: 687px;" src="https://bandcamp.com/EmbeddedPlayer/album=2454826071/size=large/bgcol=333333/linkcol=ffffff/transparent=true/" seamless><a href="https://fgsc.bandcamp.com/album/matburia">Matburia by foggesc</a></iframe>',
-      desc: ''
-    },
-    {
-      src: 'Foggesc - Stone',
-      title: 'https://www.nts.live/shows/early-bird-show-spirit-blue/episodes/early-bird-show-spirit-blue-28th-april-2022',
-      desc: ''
-    },
-  ],                      
+],                   
 };
