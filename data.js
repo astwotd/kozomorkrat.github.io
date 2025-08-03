@@ -14,7 +14,7 @@ const projectData = {
       </p>`
     },
     {
-      src:'https://kozomorkrat.github.io/assets/wooden/photo_5_2025-06-29_14-48-11.jpg', 
+      src:'assets/wooden/photo_5_2025-06-29_14-48-11.jpg', 
       title: 'The Watcher of the Ashen Thicket', 
       desc: `
       <p>
