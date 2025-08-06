@@ -25,6 +25,10 @@ const projectData = {
         So if you pass by - don’t look into its eyes.
         It has none. But it sees you anyway.
       <p>
+       images: [
+    '/assets/Wooden/photo_2025-07-04_18-40-33.jpg',
+    '/assets/Wooden/photo_2025-07-04_18-40-38.jpg'
+  ]
         <strong>Materials:</strong> Rags, branches, threads, coal, twine.
       </p>`
     },
