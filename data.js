@@ -24,7 +24,7 @@ const projectData = {
         Since then, no one disappeared. Well, except one dog who howled for three days, then walked into the woods alone. Come spring, there was a new scrap of cloth on the Watcher… as if it had reinforced itself.
         So if you pass by - don’t look into its eyes.
         It has none. But it sees you anyway.
-      <p>
+      <p>,
        images: [
     '/assets/Wooden/photo_2025-07-04_18-40-33.jpg',
     '/assets/Wooden/photo_2025-07-04_18-40-38.jpg'
