@@ -1,5 +1,5 @@
 const projectData = {
-  wooden: [
+  Organic: [
     {
       src:'/assets/Wooden/photo_6_2025-06-29_14-48-11.jpg',
       title: 'Kozomor Mask',
@@ -121,7 +121,7 @@ const projectData = {
       </p>`
     },
   ],
-  ceramic: [
+  Mixed: [
     {
       src: '/assets/Ceramic/d6ec664974e87d9517da2ae892806974-topaz-denoise-upscale-2x.jpg',
       title: 'Ancient Vessel',
@@ -140,137 +140,5 @@ const projectData = {
       title: '',
       desc: ''
     },
-  ],
-  drawings: [
-    {
-      src: '/assets/Drawings/IMG_9010.jpg',
-      title: 'Ancient Vessel',
-      desc: `
-        <p>
-          A ceramic vessel inspired by ancient pottery techniques. Handcrafted with natural clay and glazed with mineral pigments to evoke a sense of timelessness.
-        </p>`
-    },
-    {
-      src: '/assets/Drawings/IMG_9011.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: '/assets/Drawings/IMG_9012.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: '/assets/Drawings/IMG_9014.jpg',
-      title: '',
-      desc: ''
-    },
-  ],
-  video: [
-    {
-      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
-      title: 'Example Video',
-      desc: `<p>Описание видео.</p>`
-    },
-    {
-      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
-      title: 'Example Video',
-      desc: `<p>Описание видео.</p>`
-    },
-    {
-      src: 'https://www.youtube.com/embed/x8Shf6Fgon0',
-      title: 'Example Video',
-      desc: `<p>Описание видео.</p>`
-    },
-  ],
-  photos: [
-    {
-      src: 'assets/photos/photo_2025-07-07_19-45-24.jpg',
-      title: 'Ancient Vessel',
-      desc: `
-        <p>
-          A ceramic vessel inspired by ancient pottery techniques. Handcrafted with natural clay and glazed with mineral pigments to evoke a sense of timelessness.
-        </p>`
-    },
-    {
-      src: 'assets/photos/IMG_9047.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/photos/IMG_9048.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/photos/IMG_9059.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/photos/IMG_9050.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/photos/IMG_9003.jpg',
-      title: '',
-      desc: ''
-    },
-],
-  music: [
-    {
-      src: 'assets/ceramic_1.jpg',
-      title: 'Ancient Vessel',
-      desc: `
-        <p>
-          A ceramic vessel inspired by ancient pottery techniques. Handcrafted with natural clay and glazed with mineral pigments to evoke a sense of timelessness.
-        </p>`
-    },
-    {
-      src: 'assets/ceramic_2.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/ceramic_3.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/ceramic_4.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/ceramic_5.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/ceramic_6.jpg',
-      title: '',
-      desc: ''
-    },
-  ],
-  ai: [
-    {
-      src: 'assets/ceramic_1.jpg',
-      title: 'Ancient Vessel',
-      desc: `
-      <p>
-        A ceramic vessel inspired by ancient pottery techniques. Handcrafted with natural clay and glazed with mineral pigments to evoke a sense of timelessness.
-      </p>`
-    },
-    {
-      src: 'assets/ceramic_5.jpg',
-      title: '',
-      desc: ''
-    },
-    {
-      src: 'assets/ceramic_6.jpg',
-      title: '',
-      desc: ''
-    },
-  ]                        
+  ],                    
 };
