@@ -120,6 +120,16 @@ const projectData = {
         <strong>Materials:</strong> Wood, paint.
       </p>`
     },
+    {
+      src:'/assets/Wooden/DSCF7230.jpg', 
+      title: '', 
+      desc: `
+      <p>
+      </p>
+      <p>
+        <strong>Materials:</strong> Wood, moss, threads, wax.
+      </p>`
+    },
   ],
   Mixed: [
  {
@@ -128,7 +138,7 @@ const projectData = {
       desc: ''
     },
     {
-      src: '/assets/Ceramic/IMG_9639.jpg',
+      src: '/assets/Ceramic/save8.jpg',
       title: '',
       desc: ''
     },
