@@ -122,6 +122,21 @@ const projectData = {
     },
   ],
   Mixed: [
+ {
+      src: '/assets/Ceramic/save2.jpg',
+      title: '',
+      desc: ''
+    },
+    {
+      src: '/assets/Ceramic/IMG_9639.jpg',
+      title: '',
+      desc: ''
+    },
+       {
+      src: '/assets/Ceramic/save11.jpg',
+      title: '',
+      desc: ''
+    },
     {
       src: '/assets/Ceramic/d6ec664974e87d9517da2ae892806974-topaz-denoise-upscale-2x.jpg',
       title: 'Ancient Vessel',
